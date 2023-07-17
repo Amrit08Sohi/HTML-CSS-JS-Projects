@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    /* color: white; */
+}
+
+
+.nav {
+    margin-top: 50px;
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+    font-size: 2rem;
+}
+
+.container {
+    margin-top: 4vh;
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(100px,1fr));
+}
+
+.box {
+    height: 100px;
+    border: 2px solid black;
+    font-size: 5rem;
+    cursor: pointer;
+    background: transparent;
+}
+
+
+.box:first-child ,.box:nth-child(2),.box:nth-child(3){
+    border-top: none;
+}
+.box:first-child,.box:nth-child(4),.box:nth-child(7){
+    border-left: none;
+}
+.box:nth-child(3),.box:nth-child(6),.box:nth-child(9){
+    border-right: none;
+}
+.box:nth-child(7),.box:nth-child(8),.box:nth-child(9){
+    border-bottom: none;
+}
+
+.players {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.player {
+    /* left right margin */
+    margin-inline: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.restart {
+    border: none;
+    background: gray;
+    margin-block: 20px;
+    padding: 8px 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.restart:hover {
+    background: rgb(140, 124, 124);
+}
+
+.alertBox{
+    position: absolute;
+    top : 0;
+    text-align: center;
+    background-color: #dfdfdf;
+    color: #4d4b51;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 20px;
+    font-weight: bold;
+    height: 30px;
+    display: none;
+}
+
+@media screen and (max-width:470px) {
+    
+    .heading{
+        font-size: 1.8rem;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(3,minmax(90px,1fr));
+    }
+    .box {
+        height: 90px;
+        font-size: 3rem;
+    }
+    .container {
+        margin-top: 3vh;
+    }
+    .players {
+        margin-top: 15px;
+    }
+    .player {
+        margin-inline: 10px;
+        font-size: 18px;
+    }
+    .restart {
+        margin-block: 15px;
+        padding: 6px 15=2px;
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
