@@ -32,6 +32,7 @@ const changeTurn = () => {
 // start game logic
 const startGame = () => {
     // Iterating over grid cells
+    
     Array.from(gameCells).forEach(cell => {
         // Adding event listener to each cell
         cell.addEventListener('click',(e) => {
