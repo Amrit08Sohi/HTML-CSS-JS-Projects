@@ -29,6 +29,7 @@
 }
 
 .grid {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3,minmax(100px,1fr));
 }
@@ -38,8 +39,10 @@
     border: 2px solid black;
     font-size: 3.5rem;
     cursor: pointer;
+    color: black;
     background: transparent;
 }
+
 
 
 .box:first-child ,.box:nth-child(2),.box:nth-child(3){
@@ -54,6 +57,70 @@
 .box:nth-child(7),.box:nth-child(8),.box:nth-child(9){
     border-bottom: none;
 }
+
+.line-row1{
+    position: absolute;
+    top: 16%;
+    width: 100%;
+    height: 4px;
+    background-color: yellowgreen;
+}
+.line-row2{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 4px;
+    background-color: yellowgreen;
+}
+.line-row3{
+    position: absolute;
+    top: 84%;
+    width: 100%;
+    height: 4px;
+    background-color: yellowgreen;
+}
+.line-col1{
+    position: absolute;
+    left: 16%;
+    width: 4px;
+    height: 100%;
+    background-color: yellowgreen;
+}
+.line-col2{
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background-color: yellowgreen;
+}
+.line-col3{
+    position: absolute;
+    left: 84%;
+    width: 4px;
+    height: 100%;
+    background-color: yellowgreen;
+}
+
+.line-diag1 {
+    position: absolute;
+    width: 5px;
+    height: 90%;
+    background-color: yellowgreen;
+    left: 50%;
+    top: 5.8%;
+    transform: skewX(45deg);
+}
+.line-diag2 {
+    position: absolute;
+    width: 5px;
+    height: 90%;
+    background-color: yellowgreen;
+    left: 50%;
+    bottom: 5.8%;
+    transform: skewX(-45deg);
+}
+
+
 
 .players {
     margin-top: 30px;

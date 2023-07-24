@@ -13,7 +13,7 @@ Array.from(buttons).forEach((btn)=>{
         } else if(e.target.innerHTML == 'AC') {
             result = "";
             input.value = result;
-        } else if(e.target.innerHTML == 'DEL'){
+        } else if(e.target.innerHTML == 'DEL') {
             result = result.slice(0,result.length-1);
             input.value = result;
         } else {
