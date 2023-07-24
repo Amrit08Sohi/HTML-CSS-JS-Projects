@@ -21,10 +21,13 @@ restartbtn.addEventListener('click',()=>{
         cell.innerHTML = "";
         cell.disabled = false;
     });
+
+    // playerTurn = currPlayer; // change default player to X
     strike.classList.remove(strike.classList.item(1));
     // OR
     // strike.classList.remove(strike.classList[1]);
     count = 0;
+    setHoverText();
 });
 
 
@@ -33,6 +36,24 @@ const changeTurn = () => {
     return playerTurn == currPlayer ? nextPlayer : currPlayer;
 };
 
+/**
+ * The function `setHoverText` removes any existing hover classes from game cells and adds a hover
+ * class based on the current player's turn.
+ */
+const setHoverText = () => {
+    gameCells.forEach((cell) => {
+        cell.classList.remove('x-hover');
+        cell.classList.remove('o-hover');
+    });
+    const hoverClass = `${playerTurn.toLowerCase()}-hover`;
+    gameCells.forEach((cell) => {
+        if(cell.innerHTML === "") {
+            cell.classList.add(hoverClass);
+        }
+    });
+}
+// Callinf first time setHoverText()
+setHoverText();
 // start game logic
 const startGame = () => {
     // Iterating over grid cells
@@ -59,6 +80,7 @@ const startGame = () => {
                 }
                 // Change Turn
                 playerTurn = changeTurn();
+                setHoverText();
             }
         })
     });
@@ -66,18 +88,23 @@ const startGame = () => {
 
 // CheckWin logic
 const checkWin = () => {
-    const winpatt = [[0,1,2],
-                     [3,4,5],
-                     [6,7,8],
-                     [0,3,6],
-                     [1,4,7],
-                     [2,5,8],
-                     [0,4,8],
-                     [2,4,6]
-                    ];
+    const winpatt = [
+        {combo: [0,1,2], strikeClass : 'line-row1'},
+        {combo: [3,4,5], strikeClass : 'line-row2'},
+        {combo: [6,7,8], strikeClass : 'line-row3'},
+        {combo: [0,3,6], strikeClass : 'line-col1'},
+        {combo: [1,4,7], strikeClass : 'line-col2'},
+        {combo: [2,5,8], strikeClass : 'line-col3'},
+        {combo: [0,4,8], strikeClass : 'line-diag1'},
+        {combo: [2,4,6], strikeClass : 'line-diag2'},
+    ]
+                    
 
-    for(let i in winpatt) {
-        const[pos1,pos2,pos3] = winpatt[i];
+    for(let i of winpatt) {
+        
+        // Object Destructuring 
+        const {combo, strikeClass} = i;
+        const [pos1,pos2,pos3] = combo; 
         // console.log(`${pos1} ${pos2} ${pos3}`);
         if(gameCells[pos1].textContent !== "" &&
            gameCells[pos2].textContent !== "" && 
@@ -86,23 +113,24 @@ const checkWin = () => {
             if(gameCells[pos1].textContent === gameCells[pos2].textContent && gameCells[pos2].textContent === gameCells[pos3].textContent) {
                 // console.log(typeof 0)  // type = number
                 // console.log(typeof i) // type = string
-                if(i == 0) {
-                    strike.classList.add('line-row1');
-                } else if(i==1) {
-                    strike.classList.add('line-row2');
-                } else if(i == 2) {
-                    strike.classList.add('line-row3');
-                } else if(i==3) {
-                    strike.classList.add('line-col1');
-                } else if(i == 4) {
-                    strike.classList.add('line-col2');
-                } else if(i == 5) {
-                    strike.classList.add('line-col3');
-                } else if(i == 6) {
-                    strike.classList.add('line-diag1');
-                } else if(i == 7) {
-                    strike.classList.add('line-diag2');
-                } 
+                // if(i == 0) {
+                //     strike.classList.add('line-row1');
+                // } else if(i==1) {
+                //     strike.classList.add('line-row2');
+                // } else if(i == 2) {
+                //     strike.classList.add('line-row3');
+                // } else if(i==3) {
+                //     strike.classList.add('line-col1');
+                // } else if(i == 4) {
+                //     strike.classList.add('line-col2');
+                // } else if(i == 5) {
+                //     strike.classList.add('line-col3');
+                // } else if(i == 6) {
+                //     strike.classList.add('line-diag1');
+                // } else if(i == 7) {
+                //     strike.classList.add('line-diag2');
+                // } 
+                strike.classList.add(strikeClass);
                 return true;
             } 
         }
