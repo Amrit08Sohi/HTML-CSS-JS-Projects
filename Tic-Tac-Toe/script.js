@@ -5,11 +5,28 @@ const player2 = document.querySelector('.Oplayer');
 const restartbtn = document.querySelector('.restart');
 const alertBox = document.querySelector('.alertBox');
 const strike = document.querySelector('.line');
+const heading = document.getElementsByClassName("heading")[0];
+const mode = document.getElementById('toggle-mode-icon');
+// console.log(mode.innerHTML);
 // Variables
 let currPlayer = 'X';
 let nextPlayer = 'O';
 let count = 0;
 let playerTurn = currPlayer;
+
+const body = document.getElementsByTagName('body')[0];
+mode.addEventListener("click",()=>{
+    if(mode.innerHTML == '<i class="fa-regular fa-sun"></i>') {
+        mode.innerHTML = '<i class="fa-regular fa-moon"></i>';
+        body.style.background = "indigo";
+        heading.style.color = "white";
+    } else {
+        mode.innerHTML = '<i class="fa-regular fa-sun"></i>';
+        mode.classList.remove('dark-mode');
+        body.style.background = "white";
+        heading.style.color = "black";
+    } 
+});
 
 // Setting X(player1) and O(player2)
 player1.textContent = `Player 1: ${currPlayer}`;

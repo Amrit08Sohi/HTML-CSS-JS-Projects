@@ -2,23 +2,37 @@
     margin: 0;
     padding: 0;
     font-family: cursive;
-    background-color: black;
-    color: white;
 }
 
 
+/* ------------Navigation bar styling------------ */
 .nav {
+    position: relative;
     margin-top: 50px;
     width: 100vw;
-    height: 60px;
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .heading{
-    font-size: 2rem;
+    font-size: 2em;
 }
 
+#toggle-mode-icon {
+    position: absolute;
+    left: 90%;
+    margin-block : auto;
+}
+
+i {
+    font-size: 1.5em;
+}
+
+
+
+/* ------------Grid Container Styling------------ */
 .container {
     margin-top: 4vh;
     width: 100vw;
@@ -28,23 +42,25 @@
     justify-content: center;
     align-items: center;
 }
-
+/* ------------Grid Styling------------ */
 .grid {
     position: relative;
     display: grid;
     grid-template-columns: repeat(3,minmax(100px,1fr));
 }
 
+/* ------------Grid cells Styling------------ */
 .box {
-    
     height: 100px;
-    border: 2px solid indigo;
+    border: 2px solid black;
     font-size: 3.5rem;
     cursor: pointer;
-    color: yellowgreen;
+    color: black;
     background: transparent;
 }
 
+/*------------ Grid cell Hover Class------------ */
+/* Used in JS code */
 .x-hover:hover::after {
     content: "X";
     opacity: 0.4;
@@ -54,8 +70,7 @@
     opacity: 0.4;
 }
 
-
-
+/* ------------Removing side borders of grid------------ */
 .box:first-child ,.box:nth-child(2),.box:nth-child(3){
     border-top: none;
 }
@@ -68,85 +83,127 @@
 .box:nth-child(7),.box:nth-child(8),.box:nth-child(9){
     border-bottom: none;
 }
-
+/* -------------------------------------------------- */
+/*------------classes for strike lines------------ */
+/* Used in JS code */
+/* row Strike Lines */
 .line-row1{
     position: absolute;
     top: 16%;
     width: 100%;
     height: 4px;
-    background-color: white;
+    background-color: black;
+    animation: ani 2s;
 }
 .line-row2{
     position: absolute;
     top: 50%;
     width: 100%;
     height: 4px;
-    background-color: white;
+    background-color: black;
+    animation: ani 2s;
 }
 .line-row3{
     position: absolute;
     top: 84%;
     width: 100%;
     height: 4px;
-    background-color: white;
+    background-color: black;
+    animation: ani 2s;
 }
+/* Animation for row strike lines */
+@keyframes ani {
+    from {
+        width: 0%;
+    } to {
+        width: 100%;
+    }
+}
+/* Column Strike Lines */
 .line-col1{
     position: absolute;
     left: 16%;
     width: 4px;
     height: 100%;
-    background-color: white;
+    background-color: black;
+    animation: ani2 2s;
 }
+
 .line-col2{
     position: absolute;
     left: 50%;
     width: 4px;
     height: 100%;
-    background-color: white;
+    background-color: black;
+    animation: ani2 2s;
 }
 .line-col3{
     position: absolute;
     left: 84%;
     width: 4px;
     height: 100%;
-    background-color: white;
+    background-color: black;
+    animation: ani2 2s;
+}
+/* Animation for column strike line */
+@keyframes ani2 {
+    from {
+        height: 0%;
+    } to {
+        height: 100%;
+    }
 }
 
+/* Diagonal Strike Lines */
 .line-diag1 {
     position: absolute;
     width: 5px;
     height: 90%;
-    background-color: white;
+    background-color: black;
     left: 50%;
     top: 5.8%;
     transform: skewX(45deg);
+    animation: ani3 2s; 
 }
 .line-diag2 {
     position: absolute;
     width: 5px;
     height: 90%;
-    background-color: white;
+    background-color: black;
     left: 50%;
     bottom: 5.8%;
-    transform: skewX(-45deg);
+    transform: skewX(-45deg); 
+    animation: ani3 2s;
 }
-
-
-
+/* Animation for diagonal strike line */
+@keyframes ani3 {
+    from {
+        height: 0%;
+        left: 4%;
+    } 
+    to {
+        height: 90%;
+        left: 50%;
+    }
+}
+/* ------------Player container Styling------------ */
 .players {
     margin-top: 30px;
     display: flex;
     justify-content: center;
 }
+/* ------------Player Styling(X,O) ------------*/
 .player {
     /* left right margin */
     margin-inline: 20px;
     font-size: 20px;
     font-weight: bold;
 }
+/* ------------Restart button Styling------------ */
 .restart {
     border: none;
     background: gray;
+    /* top bottom margin */
     margin-block: 20px;
     padding: 8px 15px;
     font-size: 1.2rem;
@@ -159,11 +216,12 @@
     background: rgb(140, 124, 124);
 }
 
+/*------------ Win alert navigation styling ------------*/
 .alertBox{
     position: absolute;
     top : 0;
     text-align: center;
-    background-color: rgb(115, 43, 166);
+    background-color: gray;
     color: white;
     width: 100%;
     padding: 8px 12px;
@@ -173,9 +231,12 @@
     display: none;
 }
 
-/* Responsiveness  */
+/* ------------Responsiveness------------  */
 @media screen and (max-width:470px) {
     
+    .nav {
+        flex-wrap: wrap;
+    }
     .heading{
         font-size: 1.8rem;
     }
@@ -203,8 +264,6 @@
         font-size: 1rem;
     }
 }
-
-
 
 
 
