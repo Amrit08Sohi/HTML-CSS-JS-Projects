@@ -13,7 +13,7 @@
     justify-content: center;
     padding: 30px;
 }
-
+/* TOdo list container */
 .todo-list {
     width: 430px;
     height: fit-content;
@@ -24,9 +24,11 @@
     flex-direction: column;
     align-items: center;
     padding: 16px;
+    box-shadow: 0px 3px 15px blueviolet;
 }
 .todo-list h2 {
     font-size: 1.8em;
+    color: blueviolet;
 }
 /* input container styling */
 .row {
@@ -52,8 +54,14 @@ button {
     border: none;
     outline: none;
     border-radius: 25px;
+    color: white;
     width: 100px;
-    background: orangered;
+    /* background: orangered; */
+    background: linear-gradient(45deg,rgb(151, 72, 224),rgb(62, 62, 239));
+}
+
+button:hover {
+    font-size: 1.2em;
 }
 
 /* ToDo task container */
@@ -85,7 +93,7 @@ ul li::before {
     left: -10px;
     background-color: white;
     opacity: 0.4;
-    border: 2px solid black;
+    border: 2.5px solid black;
 } 
 /* this checked class is used in js to mark the task that has been done */
 
@@ -94,7 +102,8 @@ ul li::before {
     text-decoration: line-through;
 }
 .checked::before {
-    background-color: green;
+    /* background-color: green; */
+    background: linear-gradient(45deg,rgb(151, 72, 224),rgb(62, 62, 239));
     opacity: 0.7;
 }
 /* this span is used to diplay X to delete a todo */
