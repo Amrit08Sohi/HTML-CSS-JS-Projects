@@ -11,8 +11,9 @@
     background: linear-gradient(45deg,purple,blue);
     display: flex;
     justify-content: center;
-
+    padding: 30px;
 }
+
 .todo-list {
     width: 430px;
     height: fit-content;
@@ -23,9 +24,11 @@
     flex-direction: column;
     align-items: center;
     padding: 16px;
-    /* position: relative; */
 }
-
+.todo-list h2 {
+    font-size: 1.8em;
+}
+/* input container styling */
 .row {
     width: 380px;
     margin-top: 40px;
@@ -34,14 +37,14 @@
     background-color: rgb(210, 209, 209);
     border-radius: 25px;
 }
-
+/* input styling */
 input {
-    flex: 1;
+    flex-grow: 1;
     background: transparent;
     border: none;
     outline: none;
-    padding: 15px;
-    font-size: 14px;
+    padding: 14px;
+    font-size: 15px;
 }
 button {
     font-size: 17px;
@@ -49,10 +52,18 @@ button {
     border: none;
     outline: none;
     border-radius: 25px;
-    width: 110px;
-    background: rgb(255, 111, 0);
+    width: 100px;
+    background: orangered;
 }
 
+/* ToDo task container */
+#list-container {
+    margin: 25px;
+    width: 370px;
+    padding-left: 15px;
+}
+
+/* this below code contains todo task styling */
 ul li {
     list-style: none;
     padding: 15px;
@@ -63,12 +74,7 @@ ul li {
     position: relative;
 }
 
-#list-container {
-    margin: 25px;
-    width: 370px;
-    padding-left: 15px;
-}
-
+/* Draw a circle in front of todo task */
 ul li::before {
     content: '';
     position: absolute;
@@ -80,17 +86,19 @@ ul li::before {
     background-color: white;
     opacity: 0.4;
     border: 2px solid black;
-}
+} 
+/* this checked class is used in js to mark the task that has been done */
 
 .checked{
-    color: #555;
+    color: #666;
     text-decoration: line-through;
 }
 .checked::before {
     background-color: green;
     opacity: 0.7;
 }
-
+/* this span is used to diplay X to delete a todo */
+/* Used in Js */
 ul li span{
     position: absolute;
     right: 0;
@@ -104,4 +112,26 @@ ul li span{
 ul li span:hover {
     background: #edeef0;
     border-radius: 50%;
+}
+/* Responsiveness */
+@media screen and (max-width:500px) {
+    .todo-list {
+        width: 350px;
+        height: fit-content;
+        margin-top: 120px;
+    }
+    .row {
+        width: 320px;
+        margin-top: 30px;
+    }
+    button {
+        font-size: 15px;
+        width: 90px;
+    }
+    .todo-list > h2 {
+        font-size: 1.6em;
+    }
+    #list-container {
+        width: 320px;
+    }
 }
