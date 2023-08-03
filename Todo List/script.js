@@ -17,6 +17,13 @@ function addTask() {
     saveData();
 }
 
+
+inputBox.addEventListener("keydown",(event)=>{
+    if(event.key == "Enter") {
+        addTask();
+    }
+})
+
 listContainer.addEventListener("click",(e)=> {
     if(e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
