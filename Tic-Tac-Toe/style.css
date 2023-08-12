@@ -34,14 +34,29 @@ i {
 
 /* ------------Grid Container Styling------------ */
 .container {
-    margin-top: 4vh;
+    margin-top: 25px;
     width: 100vw;
-    height: 80vh;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+.turn {
+    width: 100px;
+    height: 30px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+    display: none;
+}
+
 /* ------------Grid Styling------------ */
 .grid {
     position: relative;
@@ -93,7 +108,7 @@ i {
     width: 100%;
     height: 4px;
     background-color: black;
-    animation: ani 2s;
+    animation: ani 1.2s;
 }
 .line-row2{
     position: absolute;
@@ -101,7 +116,7 @@ i {
     width: 100%;
     height: 4px;
     background-color: black;
-    animation: ani 2s;
+    animation: ani 1.2s;
 }
 .line-row3{
     position: absolute;
@@ -109,7 +124,7 @@ i {
     width: 100%;
     height: 4px;
     background-color: black;
-    animation: ani 2s;
+    animation: ani 1.2s;
 }
 /* Animation for row strike lines */
 @keyframes ani {
@@ -126,7 +141,7 @@ i {
     width: 4px;
     height: 100%;
     background-color: black;
-    animation: ani2 2s;
+    animation: ani2 1.2s;
 }
 
 .line-col2{
@@ -135,7 +150,7 @@ i {
     width: 4px;
     height: 100%;
     background-color: black;
-    animation: ani2 2s;
+    animation: ani2 1.2s;
 }
 .line-col3{
     position: absolute;
@@ -143,7 +158,7 @@ i {
     width: 4px;
     height: 100%;
     background-color: black;
-    animation: ani2 2s;
+    animation: ani2 1.2s;
 }
 /* Animation for column strike line */
 @keyframes ani2 {
@@ -163,7 +178,7 @@ i {
     left: 50%;
     top: 5.8%;
     transform: skewX(45deg);
-    animation: ani3 2s; 
+    animation: ani3 1.2s; 
 }
 .line-diag2 {
     position: absolute;
@@ -173,7 +188,7 @@ i {
     left: 50%;
     bottom: 5.8%;
     transform: skewX(-45deg); 
-    animation: ani3 2s;
+    animation: ani3 1.2s;
 }
 /* Animation for diagonal strike line */
 @keyframes ani3 {

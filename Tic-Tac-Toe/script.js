@@ -1,5 +1,6 @@
 // Target classes variables
 const gameCells = document.querySelectorAll('.box');
+const turn = document.querySelector('.turn');
 const player1 = document.querySelector('.Xplayer');
 const player2 = document.querySelector('.Oplayer');
 const restartbtn = document.querySelector('.restart');
@@ -13,6 +14,12 @@ let currPlayer = 'X';
 let nextPlayer = 'O';
 let count = 0;
 let playerTurn = currPlayer;
+// starting turn display
+turn.style.display = 'block';
+turn.innerText = playerTurn + "'s Turn"
+
+
+
 
 const body = document.getElementsByTagName('body')[0];
 mode.addEventListener("click",()=>{
@@ -20,11 +27,13 @@ mode.addEventListener("click",()=>{
         mode.innerHTML = '<i class="fa-regular fa-moon"></i>';
         body.style.background = "indigo";
         heading.style.color = "white";
+        
     } else {
         mode.innerHTML = '<i class="fa-regular fa-sun"></i>';
         mode.classList.remove('dark-mode');
         body.style.background = "white";
         heading.style.color = "black";
+
     } 
 });
 
@@ -44,6 +53,9 @@ restartbtn.addEventListener('click',()=>{
     // OR
     // strike.classList.remove(strike.classList[1]);
     count = 0;
+    playerTurn = currPlayer;
+    turn.innerText = playerTurn + "'s Turn";
+    turn.style.display = 'block';
     setHoverText();
 });
 
@@ -79,12 +91,14 @@ const startGame = () => {
         cell.addEventListener('click',(e) => {
             // comparing target cell content with ''
             if(e.target.innerText === '') {
+                turn.style.display = 'block';
                 e.target.innerHTML = playerTurn;
                 // counting turns to track  tie and win
                 count++;
                 if(count > 4) {
                     // if some player is won then display the alert message at the top of browser window
                     if(checkWin()) {
+                        turn.style.display = 'none';
                         showAlert(`${playerTurn} is a winner`); 
                         // disable game cells after someone has won
                         disableGameBordafterWin(); 
@@ -97,6 +111,7 @@ const startGame = () => {
                 }
                 // Change Turn
                 playerTurn = changeTurn();
+                turn.innerText = playerTurn + "'s Turn";
                 setHoverText();
             }
         })
