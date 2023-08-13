@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     padding: 30px;
+    
 }
 /* TOdo list container */
 .todo-list {
@@ -35,7 +36,9 @@
     margin-top: 40px;
     display: flex;
     justify-content: center;
-    background-color: rgb(210, 209, 209);
+    /* background-color: rgb(210, 209, 209); */
+    background-color: #f0f4f5;
+    /* background-color: #eaf1f3; */
     border-radius: 25px;
 }
 /* input styling */
@@ -47,6 +50,11 @@ input {
     padding: 14px;
     font-size: 15px;
 }
+input:placeholder-shown:hover {
+    user-select: none;
+    font-weight: 600;
+    font-size: 15px;
+}
 button {
     font-size: 17px;
     font-weight: 500;
@@ -55,7 +63,6 @@ button {
     border-radius: 25px;
     color: white;
     width: 100px;
-    /* background: orangered; */
     background: linear-gradient(45deg,rgb(151, 72, 224),rgb(62, 62, 239));
 }
 
@@ -81,6 +88,7 @@ ul li {
     position: relative;
 }
 
+
 /* Draw a circle in front of todo task */
 ul li::before {
     content: '';
@@ -94,6 +102,8 @@ ul li::before {
     opacity: 0.4;
     border: 2.5px solid black;
 } 
+
+
 /* this checked class is used in js to mark the task that has been done */
 
 .checked{
@@ -118,7 +128,8 @@ ul li span{
     color: #555;
 }
 ul li span:hover {
-    background: #edeef0;
+    /* background: #edeef0; */
+    background: #f0f4f5;
     border-radius: 50%;
 }
 /* Responsiveness */
