@@ -14,13 +14,15 @@ body {
     color: white;
 }
 .container {
-    border: 1px solid white;
+    /* border: 0.1px solid white; */
     border-radius: 10px;
     padding: 20px 35px;
     display: flex;
     flex-direction: column;
     background: transparent;
-    box-shadow: 8px 8px 0px rgba(79, 79, 210,0.9) ,8px 8px 10px rgba(83, 83, 225,0.7);
+    /* box-shadow: 10px 60px 50px rgb(161, 89, 230) inset, 5px 5px 25px rgb(159, 100, 248); */
+    box-shadow: 10px 56px 50px rgb(161, 89, 230) inset, 5px 5px 28px rgba(153, 237, 237,0.7);
+
 }
 .container h2 {
     font-size: 1.8em;
@@ -30,16 +32,22 @@ body {
     border: none;
     outline: none;
     width: 330px;
-    border-radius: 5px;
     padding: 12px 12px;
     font-size: 18px;
     background: #fff;
     cursor: pointer;
+    background: transparent;
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+.container input::placeholder {
+    color: white;
 }
 
 #copyIcon {
     position: absolute;
-    color: black;
+    /* color: black; */
     right: 10px;   
     top: 8px;
     font-size: 30px;
