@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right,rgb(80, 198, 198),rgb(135, 50, 215));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.container {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 20px 35px;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    box-shadow: 8px 8px 0px rgba(79, 79, 210,0.9) ,8px 8px 10px rgba(83, 83, 225,0.7);
+}
+.container h2 {
+    font-size: 1.8em;
+    margin-block: 15px;
+}
+.container input[type = 'text'] {
+    border: none;
+    outline: none;
+    width: 330px;
+    border-radius: 5px;
+    padding: 12px 12px;
+    font-size: 18px;
+    background: #fff;
+    cursor: pointer;
+}
+
+#copyIcon {
+    position: absolute;
+    color: black;
+    right: 10px;   
+    top: 8px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.input-holder {
+    position: relative;
+    margin-block: 15px;
+    width: 330px;
+}
+
+/* 
+#copyIcon {
+    position: absolute;
+    top: 110px;
+    color: black;
+    right: 40px;
+    font-size: 30px;
+    cursor: pointer;
+} */
+
+.row {
+    display: flex;
+    margin-block: 10px;
+}
+.row p,.row label {
+    flex-grow: 1;
+    font-size: 1em;
+}
+
+.row input[type='checkbox'] {
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+}
+
+#genBtn {
+    margin-block: 15px;
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: 700;
+    border: 1px solid violet;
+    border-radius: 10px;
+    background: transparent;
+    color: white; 
+    transition: background 1s ease-in;
+    cursor: pointer;
+}
+
+#genBtn:hover {
+    background: linear-gradient(to top right,rgb(109, 228, 228),rgb(142, 50, 228));;
+}
+
