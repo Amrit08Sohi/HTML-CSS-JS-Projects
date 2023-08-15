@@ -53,6 +53,9 @@ body {
     font-size: 30px;
     cursor: pointer;
 }
+#copyIcon:hover {
+    color: rgb(137, 244, 244);
+} 
 .input-holder {
     position: relative;
     margin-block: 15px;
@@ -84,6 +87,7 @@ body {
     cursor: pointer;
 }
 
+
 #genBtn {
     margin-block: 15px;
     padding: 12px 20px;
@@ -95,9 +99,29 @@ body {
     color: white; 
     transition: background 1s ease-in;
     cursor: pointer;
+    position: relative;
 }
 
-#genBtn:hover {
-    background: linear-gradient(to top right,rgb(109, 228, 228),rgb(142, 50, 228));;
+/* #genBtn:hover {
+    background: linear-gradient(to top right,rgb(109, 228, 228),rgb(142, 50, 228));
+} */
+
+#genBtn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: linear-gradient(to bottom right,rgb(88, 235, 235),rgb(135, 37, 227));
+    transform: scaleX(0);
+    z-index: -1;
+    transform-origin: right;
+    transition: transform 1s ease;
+    border-radius: 10px;
 }
 
+#genBtn:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
