@@ -32,13 +32,14 @@ body {
     border: none;
     outline: none;
     width: 330px;
-    padding: 12px 12px;
+    padding: 12px 8px;
     font-size: 18px;
     background: #fff;
     cursor: pointer;
     background: transparent;
     border-bottom: 2px solid white;
     color: white;
+    text-overflow: ellipsis;
 }
 
 .container input::placeholder {
@@ -72,6 +73,10 @@ body {
     cursor: pointer;
 } */
 
+#rangeSlider {
+    outline: none;
+}
+
 .row {
     display: flex;
     margin-block: 10px;
@@ -97,7 +102,7 @@ body {
     border-radius: 10px;
     background: transparent;
     color: white; 
-    transition: background 1s ease-in;
+    transition: background 0.4s ease-in-out;
     cursor: pointer;
     position: relative;
 }
