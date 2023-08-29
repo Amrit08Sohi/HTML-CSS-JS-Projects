@@ -9,36 +9,93 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="form-container">
-        <header>
-            <h1>Login</h1>
-        </header>
-        <div class="field-container">
-            <span class="material-symbols-outlined">
-                person
-            </span>
-            <input type="text" placeholder="Username" name="username" class="form-field" required>
-            <label for="username" class="form-label">Username</label>
-        </div>
-        <div class="field-container">
-            <span class="material-symbols-outlined" id="show-pass">
-                visibility_off
-            </span>
-            <!-- <span class="material-symbols-outlined" id="show-pass">
-                visibility
-            </span> -->
-            <input type="password" placeholder="Password" name="password" class="form-field" required id="pass-field">
-            <label for="password" class="form-label">Password</label>
+
+    <div id="card">
+        <div id="front">
+            <div class="form-container">
+                <header>
+                    <h1>Login</h1>
+                </header>
+                <div class="field-container">
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+                    <input type="text" placeholder="Username" name="username" class="form-field" 
+                    id="username" required>
+                    <label for="username" class="form-label">Username</label>
+                </div>
+                <div class="field-container">
+                    <span class="material-symbols-outlined" id="show-pass">
+                        visibility_off
+                    </span> 
+                     <!-- <span class="material-symbols-outlined" id="show-pass">
+                        visibility
+                    </span>  -->
+                     <input type="password" placeholder="Password" name="password" class="form-field" required id="password">
+                    <label for="password" class="form-label">Password</label>
+                </div>
+        
+                <div class="remind-pass">
+                    <input type="checkbox" name="" id="remind-pass">&nbsp;&nbsp;<span>Remember Password</span>
+                </div>
+        
+                <div class="btn-container">
+                    <button class="login">Login</button>
+                </div>
+            </div> 
+            <label for="sign-up">Don't have an account</label>
+            <a href="#" onclick="signUp()" id="sign-up">Signup</a>
         </div>
 
-        <div class="remind-pass">
-            <input type="checkbox" name="" id="remind-pass">&nbsp;&nbsp;<span>Remember Password</span>
-        </div>
 
-        <div class="btn-container">
-            <button class="login">Login</button>
-        </div>
+
+        <div id="back">
+            <div class="form-container">
+                <header>
+                    <h1>Signup</h1>
+                </header>
+                <div class="field-container">
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+                    <input type="text" placeholder="Username" name="username" class="form-field" 
+                    id="userName" required>
+                    <label for="userName" class="form-label">Username</label>
+                </div>
+                <div class="field-container">
+                    <span class="material-symbols-outlined">
+                        mail
+                    </span>
+                    <input type="email" placeholder="email" name="email" class="form-field" 
+                    id="email" required>
+                    <label for="email" class="form-label">Email</label>
+                </div>
+                <div class="field-container">
+                    <span class="material-symbols-outlined" id="show-pass-signup">
+                        visibility_off
+                    </span> 
+                     <!-- <span class="material-symbols-outlined" id="show-pass">
+                        visibility
+                    </span>  -->
+                     <input type="password" placeholder="Password" name="password" class="form-field" required id="passWord">
+                    <label for="passWord" class="form-label">Password</label>
+                </div>
+        
+                <div class="remind-pass">
+                    <input type="checkbox" name="" id="remind-pass">&nbsp;&nbsp;<span>Remember Password</span>
+                </div>
+        
+                <div class="btn-container">
+                    <button class="signup">
+                        Signup
+                    </button>
+                </div>
+            </div> 
+            <label for="log-in">Already have an account</label>
+            <a href="#" onclick="signUp()" id="log-in">Login</a>
+        </div>    
     </div>
+     
     <script src="./script.js"></script>
 </body>
 </html>
