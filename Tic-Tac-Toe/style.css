@@ -24,7 +24,10 @@
     position: absolute;
     left: 90%;
     margin-block : auto;
+    cursor: pointer;
 }
+
+
 
 i {
     font-size: 1.5em;
@@ -72,6 +75,9 @@ i {
     cursor: pointer;
     color: black;
     background: transparent;
+}
+.box:hover {
+    background-color: #f5f3f3;
 }
 
 /*------------ Grid cell Hover Class------------ */

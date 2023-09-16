@@ -18,18 +18,17 @@ let playerTurn = currPlayer;
 turn.style.display = 'block';
 turn.innerText = playerTurn + "'s Turn"
 
-
-
-
+// Dark and light mode
 const body = document.getElementsByTagName('body')[0];
 mode.addEventListener("click",()=>{
     if(mode.innerHTML == '<i class="fa-regular fa-sun"></i>') {
         mode.innerHTML = '<i class="fa-regular fa-moon"></i>';
+        mode.setAttribute('style','filter : invert(1)');
         body.style.background = "indigo";
         heading.style.color = "white";
-        
     } else {
         mode.innerHTML = '<i class="fa-regular fa-sun"></i>';
+        mode.removeAttribute('style');
         mode.classList.remove('dark-mode');
         body.style.background = "white";
         heading.style.color = "black";
