@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #dadada;
+    padding: 13px;
+}
+
+.logo span{
+    font-size: 19px;
+    font-weight: 600;
+    cursor: pointer;
+    padding-left: 30px;
+    position: relative;
+}
+.logo img {
+    position: absolute;
+    width: 21px;
+    top: 16px;
+}
+
+ul{
+    display: flex;
+}
+
+ul li {
+    list-style: none;
+    padding-inline:0 2em;
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+ul>li>a:hover {
+    color: rgb(163, 162, 162);
+}
+
+main {
+    min-height: 87.5vh;
+    padding: 50px 5px 5px 40px;
+}
+
+.container {
+    max-width: 100vh;
+    padding-left: 20px;
+}
+
+.container > form > label {
+    font-size: 17px;
+}
+.container>form>input {
+    padding: 6px;
+    outline: none;
+    width: 200px;
+    margin: 5px;
+    cursor: pointer;
+    
+    font-size: 15px;
+}
+#resultCont img {
+    width: 40px;
+}
+.btn>input {
+    cursor: pointer;
+    padding: 5px;
+    margin-top: 10px;
+    font-weight: 500;
+    border-radius: 7px;
+}
+footer {
+    cursor: pointer;
+    background: #dadada;
+    display: flex;
+    justify-content: center;
+    padding-block: 8px;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.container h2 {
+    margin-top: 20px;
+}
+
+
