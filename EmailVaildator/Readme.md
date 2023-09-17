@@ -1,0 +1,1 @@
+This Project is used to validate email using emailvalidation.io api.
